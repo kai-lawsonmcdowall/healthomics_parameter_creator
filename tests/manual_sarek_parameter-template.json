@@ -1,0 +1,306 @@
+{
+    "input": {
+        "optional": false,
+        "description": "Path to comma-separated file containing information about the samples in the experiment."
+    },
+    "step": {
+        "optional": true,
+        "description": "Starting step"
+    },
+    "outdir": {
+        "optional": true,
+        "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure."
+    },
+    "ecr_registry": {
+        "optional": true,
+        "description": "Name of ECR private registry containing docker containers."
+    },
+    "split_fastq": {
+        "optional": true,
+        "description": "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all."
+    },
+    "wes": {
+        "optional": true,
+        "description": "Enable when exome or panel data is provided."
+    },
+    "intervals": {
+        "optional": true,
+        "description": "Path to target bed file in case of whole exome or targeted sequencing or intervals file."
+    },
+    "nucleotides_per_second": {
+        "optional": true,
+        "description": "Estimate interval size."
+    },
+    "no_intervals": {
+        "optional": true,
+        "description": "Disable usage of intervals."
+    },
+    "skip_tools": {
+        "optional": true,
+        "description": "Disable specified tools."
+    },
+    "trim_fastq": {
+        "optional": true,
+        "description": "Run FastP for read trimming"
+    },
+    "umi_read_structure": {
+        "optional": true,
+        "description": "Specify UMI read structure"
+    },
+    "aligner": {
+        "optional": true,
+        "description": "Specify aligner to be used to map reads to reference genome."
+    },
+    "save_mapped": {
+        "optional": true,
+        "description": "Save mapped files."
+    },
+    "save_output_as_bam": {
+        "optional": true,
+        "description": "Saves output from mapping (if --save_mapped), Markduplicates & Baserecalibration as BAM file instead of CRAM"
+    },
+    "use_gatk_spark": {
+        "optional": true,
+        "description": "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration"
+    },
+    "concatenate_vcfs": {
+        "optional": true,
+        "description": "Option for concatenating germline vcf-files."
+    },
+    "only_paired_variant_calling": {
+        "optional": true,
+        "description": "If true, skips germline variant calling for matched normal to tumor sample."
+    },
+    "joint_germline": {
+        "optional": true,
+        "description": "Turn on the joint germline variant calling for GATK haplotypecaller"
+    },
+    "joint_mutect2": {
+        "optional": true,
+        "description": "Runs Mutect2 in joint (multi-sample) mode for better concordance among variant calls of tumor samples from the same patient."
+    },
+    "vep_custom_args": {
+        "optional": true,
+        "description": "Add an extra custom argument to VEP."
+    },
+    "vep_version": {
+        "optional": true,
+        "description": "Should reflect the VEP version used in the container."
+    },
+    "bcftools_annotations": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "bcftools_annotations_index": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "bcftools_header_lines": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "genome": {
+        "optional": true,
+        "description": "Name of iGenomes reference."
+    },
+    "dbsnp_vqsr": {
+        "optional": true,
+        "description": "label string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "dbsnp": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "germline_resource": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "fasta": {
+        "optional": true,
+        "description": "(string)Path to FASTA genome file."
+    },
+    "fasta_fai": {
+        "optional": true,
+        "description": "Path to FASTA reference index."
+    },
+    "known_indels": {
+        "optional": true,
+        "description": "annotate"
+    },
+    "known_indels_vqsr": {
+        "optional": true,
+        "description": "label string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "known_snps": {
+        "optional": true,
+        "description": "Path to known snps file."
+    },
+    "known_snps_tbi": {
+        "optional": true,
+        "description": "Path to known snps file snps."
+    },
+    "known_snps_vqsr": {
+        "optional": true,
+        "description": "label string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "ngscheckmate_bed": {
+        "optional": true,
+        "description": "Path to SNP bed file for sample checking with NGSCheckMate"
+    },
+    "snpeff_db": {
+        "optional": true,
+        "description": "snpEff DB version."
+    },
+    "snpeff_genome": {
+        "optional": true,
+        "description": "snpEff genome."
+    },
+    "vep_genome": {
+        "optional": true,
+        "description": "VEP genome."
+    },
+    "vep_species": {
+        "optional": true,
+        "description": "VEP species."
+    },
+    "vep_cache_version": {
+        "optional": true,
+        "description": "VEP cache version."
+    },
+    "save_reference": {
+        "optional": true,
+        "description": "(boolean)If generated by the pipeline save the STAR index in the results directory."
+    },
+    "build_only_index": {
+        "optional": true,
+        "description": "Only built references."
+    },
+    "download_cache": {
+        "optional": true,
+        "description": "Download annotation cache."
+    },
+    "igenomes_base": {
+        "optional": true,
+        "description": "(string)Directory / URL base for iGenomes references."
+    },
+    "igenomes_ignore": {
+        "optional": true,
+        "description": "(boolean)Do not load the iGenomes reference config."
+    },
+    "vep_cache": {
+        "optional": true,
+        "description": "Path to VEP cache."
+    },
+    "snpeff_cache": {
+        "optional": true,
+        "description": "Path to snpEff cache."
+    },
+    "multiqc_title": {
+        "optional": true,
+        "description": "MultiQC report title. Printed as page header, used for filename if not otherwise specified."
+    },
+    "multiqc_methods_description": {
+        "optional": true,
+        "description": "Starting step"
+    },    
+    "tools": {
+        "optional": true,
+        "description": "Tools to use for duplicate marking, variant calling and/or for annotation."
+    },
+    "save_merged_fastq": {
+        "optional": true,
+        "description": "(boolean)Save FastQ files after merging re-sequenced libraries in the results directory."
+    },
+    "custom_config_version": {
+        "optional": true,
+        "description": "(string)Git commit id for Institutional configs."
+    },
+    "custom_config_base": {
+        "optional": true,
+        "description": "(string)Base directory for Institutional configs."
+    },
+    "config_profile_name": {
+        "optional": true,
+        "description": "(string)Institutional config name."
+    },
+    "config_profile_description": {
+        "optional": true,
+        "description": "(string)Institutional config description."
+    },
+    "config_profile_contact": {
+        "optional": true,
+        "description": "(string)Institutional config contact information."
+    },
+    "config_profile_url": {
+        "optional": true,
+        "description": "(string)Institutional config URL link."
+    },
+    "max_cpus": {
+        "optional": true,
+        "description": "(integer:16)Maximum number of CPUs that can be requested for any single job."
+    },
+    "max_memory": {
+        "optional": true,
+        "description": "(string:128.GB)Maximum amount of memory that can be requested for any single job."
+    },
+    "max_time": {
+        "optional": true,
+        "description": "(string:240.h)Maximum amount of time that can be requested for any single job."
+    },
+    "help": {
+        "optional": true,
+        "description": "(boolean)Display help text."
+    },
+    "version": {
+        "optional": true,
+        "description": "(boolean)Display version and exit."
+    },
+    "publish_dir_mode": {
+        "optional": true,
+        "description": "(string[symlink|rellink|link|copy|copyNoFollow|move]:copy)Method used to save pipeline results to output directory."
+    },
+    "email": {
+        "optional": true,
+        "description": "Email address for completion summary."
+    },
+    "email_on_fail": {
+        "optional": true,
+        "description": "(string)Email address for completion summary, only when pipeline fails."
+    },
+    "plaintext_email": {
+        "optional": true,
+        "description": "(boolean)Send plain-text email instead of HTML."
+    },
+    "max_multiqc_email_size": {
+        "optional": true,
+        "description": "(string:25.MB)File size limit when attaching MultiQC reports to summary emails."
+    },
+    "monochrome_logs": {
+        "optional": true,
+        "description": "(boolean:true)Do not use coloured log outputs."
+    },
+    "hook_url": {
+        "optional": true,
+        "description": "(string)Incoming hook URL for messaging service"
+    },
+    "multiqc_config": {
+        "optional": true,
+        "description": "(string)Custom config file to supply to MultiQC."
+    },
+    "multiqc_logo": {
+        "optional": true,
+        "description": "(string)Custom logo file to supply to MultiQC. File name must also be set in the MultiQC config file"
+    },
+    "validate_params": {
+        "optional": true,
+        "description": "(boolean:true)Boolean whether to validate parameters against the schema at runtime"
+    },
+    "show_hidden_params": {
+        "optional": true,
+        "description": "(boolean)Show all params when using `--help`"
+    },
+    "aws_region": {
+        "description": "AWS region used for execution",
+        "optional": true
+    }
+}

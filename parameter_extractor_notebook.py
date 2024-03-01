@@ -109,6 +109,11 @@ def create_parameters_json(
     # getting if the parameter is required or optional.
     process_json(html_string, extracted_data)
 
+    # Convert "optional": "" to "optional": true if empty
+    for key, value in extracted_data.items():
+        if value["optional"] == "":
+            extracted_data[key]["optional"] = True
+
     # Write the extracted data to a new JSON file
     with open(json_output_path, "w") as f:
         json.dump(extracted_data, f, indent=4)
@@ -118,7 +123,7 @@ def create_parameters_json(
 # example usage
 create_parameters_json(
     "fetchngs_nextflow_schema.json",
-    "https://nf-co.re/fetchngs/1.12.0/parameters",
+    "https://nf-co.re/differentialabundance/1.4.0/parameters",
     "notebook_fetchngs_parameters_description.json",
 )
 # %%
