@@ -4,3 +4,5 @@ A quick python script which creates the AWS HealthOmics parameter file for nf-co
 This file can be placed in the root directory of a nf-core pipline which has been pulled down. It requires a nf-core pipeline which has a nextflow_schema.json, and the url of the parameters page of the nf-core pipeline in question. 
 
 Currently, it is executed as a python notebook in vs-code. However, I will make this a command line utility. 
+
+The current example illustrates how this might be done with the fetchngs pipeline. To do this, I simply fetched the raw ```nextflow_schema.json``` content and downloaded here. and used the URL ```https://nf-co.re/fetchngs/1.12.0/parameters```.
