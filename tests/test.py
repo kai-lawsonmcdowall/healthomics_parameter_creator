@@ -1,4 +1,3 @@
-# %%
 import json
 import sys
 import os
@@ -17,7 +16,6 @@ create_parameters_json(
 )
 
 
-# %%
 def compare_json_files(file1_path, file2_path):
     # Load JSON data from the first file
     with open(file1_path, "r") as file1:
@@ -60,5 +58,3 @@ file2_path = "manual_sarek_parameter-template.json"
 
 # Compare the JSON files
 compare_json_files(file1_path, file2_path)
-
-# %%
