@@ -4,7 +4,7 @@
 
 <br>
 
-- This file can be placed in the root directory of a nf-core pipline. It requires a nf-core pipeline which has a `nextflow_schema.json`, and the url of the parameters page of the nf-core pipeline in question.
+- This file can be placed in the root directory of a nf-core pipline. It requires a nf-core pipeline which has a `nextflow_schema.json`, and the url of the parameters page of the nf-core pipeline in question. It gets the required params from the .json file, and determines if they are required or optional from the nf-core params page.
 
 <br>
 
