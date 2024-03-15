@@ -20,4 +20,4 @@
 
 <br>
 
-- install the necessary packages via `pip install -r requirements.txt`
+- install the necessary packages via `pip install -r requirements.txt`, and an example can be executed by running the `example_CLI_execution.sh` script, which generates the params for fetchngs.
