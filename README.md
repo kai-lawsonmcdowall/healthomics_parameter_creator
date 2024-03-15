@@ -1,10 +1,13 @@
 # healthomics parameter creator
 
 - A quick python script which creates the AWS HealthOmics parameter file for nf-core pipelines, as a prerequisite to uploading pipelines to [AWS HealtlhOmics](https://aws.amazon.com/healthomics/). It automates **Step 1 AWS HealthOmics Parameter file** in the workflow: [Migrating Nf-core Workflows Into AWS HealthOmics](https://catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US/workshop/create-healthomics-workflow)
+
 <br>
 
-- his file can be placed in the root directory of a nf-core pipline. It requires a nf-core pipeline which has a `nextflow_schema.json`, and the url of the parameters page of the nf-core pipeline in question.
+- This file can be placed in the root directory of a nf-core pipline. It requires a nf-core pipeline which has a `nextflow_schema.json`, and the url of the parameters page of the nf-core pipeline in question.
+
 <br>
+
 - it can either be executed as a command line utility (`parameter_extractor_command_line.py`) or via a notebook (`parameter_extractor_notebook.py`)
 
 <br>
