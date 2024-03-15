@@ -8,7 +8,7 @@
 
 <br>
 
-- it can either be executed as a command line utility (`parameter_extractor_command_line.py`) or via a notebook (`parameter_extractor_notebook.py`)
+- it can either be executed as a command line utility (`parameter_extractor_command_line.py`) or via a notebook (`parameter_extractor_notebook.ipynb`)
 
 <br>
 
