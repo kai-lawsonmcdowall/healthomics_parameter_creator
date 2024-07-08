@@ -7,10 +7,6 @@
         "optional": true,
         "description": "Path to comma-separated file containing information about the samples in the experiment."
     },
-    "outdir": {
-        "optional": false,
-        "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure."
-    },
     "split_fastq": {
         "optional": true,
         "description": "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all."
@@ -395,30 +391,6 @@
         "optional": true,
         "description": "Do not load the iGenomes reference config."
     },
-    "custom_config_version": {
-        "optional": true,
-        "description": "Git commit id for Institutional configs."
-    },
-    "custom_config_base": {
-        "optional": true,
-        "description": "Base directory for Institutional configs."
-    },
-    "config_profile_name": {
-        "optional": true,
-        "description": "Institutional config name."
-    },
-    "config_profile_description": {
-        "optional": true,
-        "description": "Institutional config description."
-    },
-    "config_profile_contact": {
-        "optional": true,
-        "description": "Institutional config contact information."
-    },
-    "config_profile_url": {
-        "optional": true,
-        "description": "Institutional config URL link."
-    },
     "test_data_base": {
         "optional": true,
         "description": "Base path / URL for data used in the test profiles"
@@ -431,53 +403,13 @@
         "optional": true,
         "description": "Sequencing platform information to be added to read group (PL field)."
     },
-    "max_cpus": {
-        "optional": true,
-        "description": "Maximum number of CPUs that can be requested for any single job."
-    },
-    "max_memory": {
-        "optional": true,
-        "description": "Maximum amount of memory that can be requested for any single job."
-    },
-    "max_time": {
-        "optional": true,
-        "description": "Maximum amount of time that can be requested for any single job."
-    },
     "ecr_registry": {
         "optional": true,
         "description": "Amazon ECR registry to use for container images"
     },
-    "help": {
-        "optional": true,
-        "description": "Display help text."
-    },
-    "version": {
-        "optional": true,
-        "description": "Display version and exit."
-    },
-    "publish_dir_mode": {
-        "optional": true,
-        "description": "Method used to save pipeline results to output directory."
-    },
-    "email": {
-        "optional": true,
-        "description": "Email address for completion summary."
-    },
-    "email_on_fail": {
-        "optional": true,
-        "description": "Email address for completion summary, only when pipeline fails."
-    },
-    "plaintext_email": {
-        "optional": true,
-        "description": "Send plain-text email instead of HTML."
-    },
     "max_multiqc_email_size": {
         "optional": true,
         "description": "File size limit when attaching MultiQC reports to summary emails."
-    },
-    "monochrome_logs": {
-        "optional": true,
-        "description": "Do not use coloured log outputs."
     },
     "multiqc_title": {
         "optional": true,
@@ -499,16 +431,8 @@
         "optional": true,
         "description": "Directory to keep pipeline Nextflow logs and reports."
     },
-    "validate_params": {
-        "optional": true,
-        "description": "Boolean whether to validate parameters against the schema at runtime"
-    },
     "show_hidden_params": {
         "optional": true,
         "description": "Show all params when using `--help`"
-    },
-    "hook_url": {
-        "optional": true,
-        "description": "Incoming hook URL for messaging service"
     }
 }

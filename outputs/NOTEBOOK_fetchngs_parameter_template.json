@@ -1,0 +1,38 @@
+{
+    "input": {
+        "optional": false,
+        "description": "File containing SRA/ENA/GEO/DDBJ identifiers one per line to download their associated metadata and FastQ files."
+    },
+    "ena_metadata_fields": {
+        "optional": true,
+        "description": "Comma-separated list of ENA metadata fields to fetch before downloading data."
+    },
+    "sample_mapping_fields": {
+        "optional": true,
+        "description": "Comma-separated list of ENA metadata fields used to create a separate 'id_mappings.csv' and 'multiqc_config.yml' with selected fields that can be used to rename samples in general and in MultiQC."
+    },
+    "nf_core_pipeline": {
+        "optional": true,
+        "description": "Name of supported nf-core pipeline e.g. 'rnaseq'. A samplesheet for direct use with the pipeline will be created with the appropriate columns."
+    },
+    "nf_core_rnaseq_strandedness": {
+        "optional": true,
+        "description": "Value for 'strandedness' entry added to samplesheet created when using '--nf_core_pipeline rnaseq'."
+    },
+    "download_method": {
+        "optional": true,
+        "description": "Method to download FastQ files. Available options are 'aspera', 'ftp' or 'sratools'. Default is 'ftp'."
+    },
+    "skip_fastq_download": {
+        "optional": true,
+        "description": "Only download metadata for public data database ids and don't download the FastQ files."
+    },
+    "dbgap_key": {
+        "optional": true,
+        "description": "dbGaP repository key."
+    },
+    "force_sratools_download": {
+        "optional": true,
+        "description": "This parameter has been deprecated. Please use '--download_method sratools' instead."
+    }
+}

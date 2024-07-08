@@ -1,0 +1,438 @@
+{
+    "step": {
+        "optional": false,
+        "description": "Starting step"
+    },
+    "input": {
+        "optional": true,
+        "description": "Path to comma-separated file containing information about the samples in the experiment."
+    },
+    "split_fastq": {
+        "optional": true,
+        "description": "Specify how many reads each split of a FastQ file contains. Set 0 to turn off splitting at all."
+    },
+    "wes": {
+        "optional": true,
+        "description": "Enable when exome or panel data is provided."
+    },
+    "intervals": {
+        "optional": true,
+        "description": "Path to target bed file in case of whole exome or targeted sequencing or intervals file."
+    },
+    "nucleotides_per_second": {
+        "optional": true,
+        "description": "Estimate interval size."
+    },
+    "no_intervals": {
+        "optional": true,
+        "description": "Disable usage of intervals."
+    },
+    "tools": {
+        "optional": true,
+        "description": "Tools to use for variant calling and/or for annotation."
+    },
+    "skip_tools": {
+        "optional": true,
+        "description": "Disable specified tools."
+    },
+    "trim_fastq": {
+        "optional": true,
+        "description": "Run FastP for read trimming"
+    },
+    "clip_r1": {
+        "optional": true,
+        "description": "Remove bp from the 5' end of read 1"
+    },
+    "clip_r2": {
+        "optional": true,
+        "description": "Remove bp from the 5' end of read 2"
+    },
+    "three_prime_clip_r1": {
+        "optional": true,
+        "description": "Remove bp from the 3' end of read 1"
+    },
+    "three_prime_clip_r2": {
+        "optional": true,
+        "description": "Remove bp from the 3' end of read 2"
+    },
+    "trim_nextseq": {
+        "optional": true,
+        "description": "Removing poly-G tails."
+    },
+    "save_trimmed": {
+        "optional": true,
+        "description": "Save trimmed FastQ file intermediates."
+    },
+    "umi_read_structure": {
+        "optional": true,
+        "description": "Specify UMI read structure"
+    },
+    "group_by_umi_strategy": {
+        "optional": true,
+        "description": "Default strategy with UMI"
+    },
+    "save_split_fastqs": {
+        "optional": true,
+        "description": "If set, publishes split FASTQ files. Intended for testing purposes."
+    },
+    "aligner": {
+        "optional": true,
+        "description": "Specify aligner to be used to map reads to reference genome."
+    },
+    "save_mapped": {
+        "optional": true,
+        "description": "Save mapped files."
+    },
+    "save_output_as_bam": {
+        "optional": true,
+        "description": "Saves output from mapping (if `--save_mapped`), Markduplicates & Baserecalibration as BAM file instead of CRAM"
+    },
+    "use_gatk_spark": {
+        "optional": true,
+        "description": "Enable usage of GATK Spark implementation for duplicate marking and/or base quality score recalibration"
+    },
+    "concatenate_vcfs": {
+        "optional": true,
+        "description": "Option for concatenating germline vcf-files."
+    },
+    "only_paired_variant_calling": {
+        "optional": true,
+        "description": "If true, skips germline variant calling for matched normal to tumor sample. Normal samples without matched tumor will still be processed through germline variant calling tools."
+    },
+    "joint_germline": {
+        "optional": true,
+        "description": "Turn on the joint germline variant calling for GATK haplotypecaller"
+    },
+    "ascat_min_base_qual": {
+        "optional": true,
+        "description": "Overwrite Ascat min base quality required for a read to be counted."
+    },
+    "ascat_min_counts": {
+        "optional": true,
+        "description": "Overwrite Ascat minimum depth required in the normal for a SNP to be considered."
+    },
+    "ascat_min_map_qual": {
+        "optional": true,
+        "description": "Overwrite Ascat min mapping quality required for a read to be counted."
+    },
+    "ascat_ploidy": {
+        "optional": true,
+        "description": "Overwrite ASCAT ploidy."
+    },
+    "ascat_purity": {
+        "optional": true,
+        "description": "Overwrite ASCAT purity."
+    },
+    "cf_chrom_len": {
+        "optional": true,
+        "description": "Specify a custom chromosome length file."
+    },
+    "cf_coeff": {
+        "optional": true,
+        "description": "Overwrite Control-FREEC coefficientOfVariation"
+    },
+    "cf_contamination_adjustment": {
+        "optional": true,
+        "description": "Overwrite Control-FREEC contaminationAdjustement"
+    },
+    "cf_contamination": {
+        "optional": true,
+        "description": "Design known contamination value for Control-FREEC"
+    },
+    "cf_minqual": {
+        "optional": true,
+        "description": "Minimal sequencing quality for a position to be considered in BAF analysis."
+    },
+    "cf_mincov": {
+        "optional": true,
+        "description": "Minimal read coverage for a position to be considered in BAF analysis."
+    },
+    "cf_ploidy": {
+        "optional": true,
+        "description": "Genome ploidy used by ControlFREEC"
+    },
+    "cf_window": {
+        "optional": true,
+        "description": "Overwrite Control-FREEC window size."
+    },
+    "cnvkit_reference": {
+        "optional": true,
+        "description": "Copy-number reference for CNVkit"
+    },
+    "pon": {
+        "optional": true,
+        "description": "Panel-of-normals VCF (bgzipped) for GATK Mutect2"
+    },
+    "pon_tbi": {
+        "optional": true,
+        "description": "Index of PON panel-of-normals VCF."
+    },
+    "ignore_soft_clipped_bases": {
+        "optional": true,
+        "description": "Do not analyze soft clipped bases in the reads for GATK Mutect2."
+    },
+    "vep_include_fasta": {
+        "optional": true,
+        "description": "Allow usage of fasta file for annotation with VEP"
+    },
+    "vep_dbnsfp": {
+        "optional": true,
+        "description": "Enable the use of the VEP dbNSFP plugin."
+    },
+    "dbnsfp": {
+        "optional": true,
+        "description": "Path to dbNSFP processed file."
+    },
+    "dbnsfp_tbi": {
+        "optional": true,
+        "description": "Path to dbNSFP tabix indexed file."
+    },
+    "dbnsfp_consequence": {
+        "optional": true,
+        "description": "Consequence to annotate with"
+    },
+    "dbnsfp_fields": {
+        "optional": true,
+        "description": "Fields to annotate with"
+    },
+    "vep_loftee": {
+        "optional": true,
+        "description": "Enable the use of the VEP LOFTEE plugin."
+    },
+    "vep_spliceai": {
+        "optional": true,
+        "description": "Enable the use of the VEP SpliceAI plugin."
+    },
+    "spliceai_snv": {
+        "optional": true,
+        "description": "Path to spliceai raw scores snv file."
+    },
+    "spliceai_snv_tbi": {
+        "optional": true,
+        "description": "Path to spliceai raw scores snv tabix indexed file."
+    },
+    "spliceai_indel": {
+        "optional": true,
+        "description": "Path to spliceai raw scores indel file."
+    },
+    "spliceai_indel_tbi": {
+        "optional": true,
+        "description": "Path to spliceai raw scores indel tabix indexed file."
+    },
+    "vep_spliceregion": {
+        "optional": true,
+        "description": "Enable the use of the VEP SpliceRegion plugin."
+    },
+    "vep_custom_args": {
+        "optional": true,
+        "description": "Add an extra custom argument to VEP."
+    },
+    "snpeff_cache": {
+        "optional": true,
+        "description": "Path to snpEff cache."
+    },
+    "vep_cache": {
+        "optional": true,
+        "description": "Path to VEP cache."
+    },
+    "outdir_cache": {
+        "optional": true,
+        "description": "The output directory where the cache will be saved. You have to use absolute paths to storage on Cloud infrastructure."
+    },
+    "vep_out_format": {
+        "optional": true,
+        "description": "VEP output-file format."
+    },
+    "genome": {
+        "optional": true,
+        "description": "Name of iGenomes reference."
+    },
+    "ascat_genome": {
+        "optional": true,
+        "description": "ASCAT genome."
+    },
+    "ascat_alleles": {
+        "optional": true,
+        "description": "Path to ASCAT allele zip file."
+    },
+    "ascat_loci": {
+        "optional": true,
+        "description": "Path to ASCAT loci zip file."
+    },
+    "ascat_loci_gc": {
+        "optional": true,
+        "description": "Path to ASCAT GC content correction file."
+    },
+    "ascat_loci_rt": {
+        "optional": true,
+        "description": "Path to ASCAT RT (replictiming) correction file."
+    },
+    "bwa": {
+        "optional": true,
+        "description": "Path to BWA mem indices."
+    },
+    "bwamem2": {
+        "optional": true,
+        "description": "Path to bwa-mem2 mem indices."
+    },
+    "chr_dir": {
+        "optional": true,
+        "description": "Path to chromosomes folder used with ControLFREEC."
+    },
+    "dbsnp": {
+        "optional": true,
+        "description": "Path to dbsnp file."
+    },
+    "dbsnp_tbi": {
+        "optional": true,
+        "description": "Path to dbsnp index."
+    },
+    "dbsnp_vqsr": {
+        "optional": true,
+        "description": "label string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "dict": {
+        "optional": true,
+        "description": "Path to FASTA dictionary file."
+    },
+    "dragmap": {
+        "optional": true,
+        "description": "Path to dragmap indices."
+    },
+    "fasta": {
+        "optional": true,
+        "description": "Path to FASTA genome file."
+    },
+    "fasta_fai": {
+        "optional": true,
+        "description": "Path to FASTA reference index."
+    },
+    "germline_resource": {
+        "optional": true,
+        "description": "Path to GATK Mutect2 Germline Resource File."
+    },
+    "germline_resource_tbi": {
+        "optional": true,
+        "description": "Path to GATK Mutect2 Germline Resource Index."
+    },
+    "known_indels": {
+        "optional": true,
+        "description": "Path to known indels file."
+    },
+    "known_indels_tbi": {
+        "optional": true,
+        "description": "Path to known indels file index."
+    },
+    "known_indels_vqsr": {
+        "optional": true,
+        "description": "If you use AWS iGenomes, this has already been set for you appropriately.\n\n1st label string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "known_snps": {
+        "optional": true,
+        "description": "If you use AWS iGenomes, this has already been set for you appropriately.\n\nPath to known snps file."
+    },
+    "known_snps_tbi": {
+        "optional": true,
+        "description": "Path to known snps file snps."
+    },
+    "known_snps_vqsr": {
+        "optional": true,
+        "description": "If you use AWS iGenomes, this has already been set for you appropriately.\n\nlabel string for VariantRecalibration (haplotypecaller joint variant calling)"
+    },
+    "mappability": {
+        "optional": true,
+        "description": "Path to Control-FREEC mappability file."
+    },
+    "snpeff_db": {
+        "optional": true,
+        "description": "snpEff DB version."
+    },
+    "snpeff_genome": {
+        "optional": true,
+        "description": "snpEff genome."
+    },
+    "snpeff_version": {
+        "optional": true,
+        "description": "snpEff version."
+    },
+    "vep_genome": {
+        "optional": true,
+        "description": "VEP genome."
+    },
+    "vep_species": {
+        "optional": true,
+        "description": "VEP species."
+    },
+    "vep_cache_version": {
+        "optional": true,
+        "description": "VEP cache version."
+    },
+    "vep_version": {
+        "optional": true,
+        "description": "VEP version."
+    },
+    "save_reference": {
+        "optional": true,
+        "description": "Save built references."
+    },
+    "build_only_index": {
+        "optional": true,
+        "description": "Only built references."
+    },
+    "download_cache": {
+        "optional": true,
+        "description": "Download annotation cache."
+    },
+    "igenomes_base": {
+        "optional": true,
+        "description": "Directory / URL base for iGenomes references."
+    },
+    "igenomes_ignore": {
+        "optional": true,
+        "description": "Do not load the iGenomes reference config."
+    },
+    "test_data_base": {
+        "optional": true,
+        "description": "Base path / URL for data used in the test profiles"
+    },
+    "seq_center": {
+        "optional": true,
+        "description": "Sequencing center information to be added to read group (CN field)."
+    },
+    "seq_platform": {
+        "optional": true,
+        "description": "Sequencing platform information to be added to read group (PL field)."
+    },
+    "ecr_registry": {
+        "optional": true,
+        "description": "Amazon ECR registry to use for container images"
+    },
+    "max_multiqc_email_size": {
+        "optional": true,
+        "description": "File size limit when attaching MultiQC reports to summary emails."
+    },
+    "multiqc_title": {
+        "optional": true,
+        "description": "MultiQC report title. Printed as page header, used for filename if not otherwise specified."
+    },
+    "multiqc_config": {
+        "optional": true,
+        "description": "Custom config file to supply to MultiQC."
+    },
+    "multiqc_logo": {
+        "optional": true,
+        "description": "Custom logo file to supply to MultiQC. File name must also be set in the MultiQC config file"
+    },
+    "multiqc_methods_description": {
+        "optional": true,
+        "description": "Custom MultiQC yaml file containing HTML including a methods description."
+    },
+    "tracedir": {
+        "optional": true,
+        "description": "Directory to keep pipeline Nextflow logs and reports."
+    },
+    "show_hidden_params": {
+        "optional": true,
+        "description": "Show all params when using `--help`"
+    }
+}

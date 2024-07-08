@@ -21,3 +21,48 @@
 <br>
 
 - install the necessary packages via `pip install -r requirements.txt`, and an example can be executed by running the `example_CLI_execution.sh` script, which generates the params for fetchngs.
+
+## Updates 
+
+Additionaltiy functionality has been added which automatically removes common parameters derived from nextflow_schema.json, which are not compatible with healthomics. These are the following: 
+
+```
+    exclude_parameters = [
+        "outdir",
+        "email",
+        "custom_config_version",
+        "custom_config_base",
+        "config_profile_name",
+        "config_profile_description",
+        "config_profile_contact",
+        "config_profile_url",
+        "max_cpus",
+        "max_memory",
+        "max_time",
+        "help",
+        "version",
+        "publish_dir_mode",
+        "email_on_fail",
+        "plaintext_email",
+        "monochrome_logs",
+        "hook_url",
+        "validate_params",
+        "validationShowHiddenParams",
+        "validationFailUnrecognisedParams",
+        "validationLenientMode",
+    ]
+```
+
+## Folders: 
+
+### Outputs
+
+These are the outputs from testing the CLI and Notebook scripts, this is for fetchNGS and Sarek. 
+
+### Tests
+
+This includes the CLI scripts testing the fetchNGS and Sarek pipelines (The examples execution from the notebook are done in the notebook). It also includes the necessary nextflow_schema.json for the respective pipelines, and a python script testing a manually curated version of the sarek pipeline as well as the automated one. 
+
+### Home directory
+
+Contains the two scripts that can be used to generate the scripts (the CLI and Notebook version), this readme and the requirements.txt

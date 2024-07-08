@@ -19,7 +19,6 @@ def extract_substrings(input_string: str, keyword: str):
         list: A list of extracted substrings, each of which will contain the optional or required statement of each parameter
         listed in the nf-core workflow params page.
     """
-
     substrings = []
     start_pattern = re.escape(f"<code>--{keyword}</code>")
     end_pattern = re.escape("<code>--")
@@ -36,18 +35,15 @@ def process_json(input_string: str, json_data: dict):
     based on the presence of specific substrings associated with each keyword. This function modifies the
     'optional' status in the 'json_data' dictionary in place.
 
-
     Args:
         input_string (str): The input string to search for substrings.
         json_data (dict): A dictionary containing keyword-substring mappings.
 
     Returns:
         None
-
-
     """
     for keyword in json_data.keys():
-        print(f"getting required status for {keyword}")
+        print(f"Getting required status for {keyword}")
         substrings = extract_substrings(input_string, keyword)
         for idx, substring in enumerate(substrings, 1):
             if (
@@ -82,7 +78,7 @@ def create_parameters_json(
     with open(nextflow_schema, "r") as f:
         original_data = json.load(f)
 
-    # fetching the html content of the workflow's nf-core params page.
+    # Fetching the HTML content of the workflow's nf-core params page
     response = requests.get(nf_core_params_url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, "html.parser")
@@ -91,7 +87,33 @@ def create_parameters_json(
     # Initialize an empty dictionary to store extracted data
     extracted_data = {}
 
-    # Iterate over each definition in the nextflow Schema
+    # List of parameters to exclude from the final JSON
+    exclude_parameters = [
+        "outdir",
+        "email",
+        "custom_config_version",
+        "custom_config_base",
+        "config_profile_name",
+        "config_profile_description",
+        "config_profile_contact",
+        "config_profile_url",
+        "max_cpus",
+        "max_memory",
+        "max_time",
+        "help",
+        "version",
+        "publish_dir_mode",
+        "email_on_fail",
+        "plaintext_email",
+        "monochrome_logs",
+        "hook_url",
+        "validate_params",
+        "validationShowHiddenParams",
+        "validationFailUnrecognisedParams",
+        "validationLenientMode",
+    ]
+
+    # Iterate over each definition in the Nextflow schema
     for definition_key, definition_value in original_data.get(
         "definitions", {}
     ).items():
@@ -99,6 +121,10 @@ def create_parameters_json(
         if "properties" in definition_value:
             # Iterate over each property in the definition
             for property_key, property_value in definition_value["properties"].items():
+                # Skip excluded parameters
+                if property_key in exclude_parameters:
+                    continue
+
                 # Extract title and description
                 title = property_key
                 description = property_value.get("description", "")
@@ -106,7 +132,7 @@ def create_parameters_json(
                 # Set optional field to an empty string
                 extracted_data[title] = {"optional": "", "description": description}
 
-    # getting if the parameter is required or optional.
+    # Getting if the parameter is required or optional
     process_json(html_string, extracted_data)
 
     # Convert "optional": "" to "optional": true if empty
