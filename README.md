@@ -1,6 +1,6 @@
 # healthomics parameter creator
 
-***This repo and it's contents has essentially been deprectaed by the addition of a newer repo [healthomics_helper_tools](https://github.com/kai-lawsonmcdowall/healthomics_helper_tools/tree/main). I'd highly encourage you to refer to that for end-to-end creation of NF-core workflows for HealthOmics*** <br>
+***This repo and it's contents has essentially been deprectaed by the addition of a newer repo [healthomics_helper_tools](https://github.com/kai-lawsonmcdowall/healthomics_helper_tools/tree/main). I'd highly encourage you to refer to that for end-to-end creation of NF-core workflows for HealthOmics*** <br><br>
 
 - A quick python script which creates the AWS HealthOmics parameter file for nf-core pipelines, as a prerequisite to uploading pipelines to [AWS HealtlhOmics](https://aws.amazon.com/healthomics/). It automates **Step 1 AWS HealthOmics Parameter file** in the workflow: [Migrating Nf-core Workflows Into AWS HealthOmics](https://catalog.us-east-1.prod.workshops.aws/workshops/76d4a4ff-fe6f-436a-a1c2-f7ce44bc5d17/en-US/workshop/create-healthomics-workflow)
 
